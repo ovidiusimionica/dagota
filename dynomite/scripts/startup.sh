@@ -3,10 +3,13 @@
 cd /opt/app-root/src 
 
 
-SEEDTOKEN=${DYN_TOKEN}$(hostname | sed 's/[^0-9]//g')
+SEEDTOKEN=${DYN_TOKEN}
+DYN_RACK=us-east-$(hostname | sed 's/[^0-9]//g')
 sed -i 's/%DYN_DC%/'${DYN_DC}'/g' /opt/app-root/src/conf/dynomite.yml
 sed -i 's/%DYN_RACK%/'${DYN_RACK}'/g' /opt/app-root/src/conf/dynomite.yml
 echo "  tokens: '${SEEDTOKEN}'" >> /opt/app-root/src/conf/dynomite.yml
+echo "  read_consistency: DC_QUORUM" >> /opt/app-root/src/conf/dynomite.yml
+echo "  write_consistency: DC_QUORUM" >> /opt/app-root/src/conf/dynomite.yml
 
 cat /opt/app-root/src/conf/dynomite.yml
 
