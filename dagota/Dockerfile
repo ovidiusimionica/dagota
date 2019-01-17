@@ -5,6 +5,7 @@ LABEL authors="Patrice FERLET <patrice.ferlet@smile.fr"
 COPY ./ /usr/src/go/dagota/
 RUN set -xe;                   \
     cd /usr/src/go/dagota;     \
+    yum install -y epel-release; \
     yum install -y golang;     \
     go build;                  \
     mv dagota /usr/bin/dagota; \
