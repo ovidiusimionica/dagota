@@ -12,7 +12,7 @@ RUN set -xe;                   \
     yum remove -y golang;      \
     yum clean all;
 
-ENV DYN_TOKEN="123456789" DYN_RACK="rack1" DYN_DC="dc1" DYN_SVC=""
+ENV DYN_TOKEN="123456789" DYN_RACK="us-east-" DYN_DC="dc1" DYN_SVC=""
 
 EXPOSE 8080 8101
 ENTRYPOINT ["dagota"]
