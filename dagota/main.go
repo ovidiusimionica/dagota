@@ -111,8 +111,8 @@ func main() {
 			b := strings.Split(p, ".")[0]
 			if matches := tokenreg.FindAllStringSubmatch(b, 1); len(matches) > 0 && len(matches[0]) > 0 {
 				id := matches[0][1]
-				t := *rack + id
-				entry := fmt.Sprintf("%s:%d:%s:%s:%s", p, 8101, t, *dc, *token)
+				r := *rack + id
+				entry := fmt.Sprintf("%s:%d:%s:%s:%s", p, 8101, r, *dc, *token)
 				list = append(list, entry)
 			} else {
 				log.Println(matches)
