@@ -1,6 +1,6 @@
 # Dynomite on OpenShift as Statefulset
 
-Dynomite (https://github.com/Netflix/dynomite) is a distributed dynamo layer for redis and memcached hight availability. It is use to replicate each service with data and that's mainly what we need with OpenShift statefulsets.
+Dynomite (https://github.com/Netflix/dynomite) is a distributed dynamo layer for redis and memcached high availability. It is use to replicate each service with data and that's mainly what we need with OpenShift statefulsets.
 
 Note: memcached is not tested at this time.
 
